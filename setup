@@ -12,7 +12,7 @@ createdb census_demo -T template_postgis
 #
 ./csvcut -f 2,4,5 -o "," DEC_10_PL_GCTPL2.ST05/DEC_10_PL_GCTPL2.ST05.csv | tail +5 | cut -c 10-200 > population.csv
 psql -d census_demo -c "create table population (id char(5), county varchar(100), population integer);"
-psql -d census_demo -c "copy population from '${HOME}/src/Census-Map-Demo/population.csv' delimiters ',' CSV;"
+psql -d census_demo -c "copy population from '${HOME}/src/making-maps-demo/population.csv' delimiters ',' CSV;"
 #
 # load the shapefile
 # ...using the same projection as google maps because that's eventually how we'll

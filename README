@@ -1,0 +1,30 @@
+This code accompanies a five-part blog series on our recent explorations making choropleth maps using PostGIS, TileMill, Mapnik and Google Maps.
+
+To work through the demo go here:
+http://blog.apps.chicagotribune.com/2011/03/07/making-maps-1/
+
+If you're impatient, install the requirements...
+
+PostgreSQL, PostGIS, GDAL, etc. geo stack:
+http://blog.apps.chicagotribune.com/2010/02/17/quick-install-pythonpostgis-geo-stack-on-snow-leopard/
+
+PostGIS spatial database template:
+http://docs.djangoproject.com/en/dev/ref/contrib/gis/install/#spatialdb-template
+
+Mapnik and TileMill:
+Install Mapnik and TileMill following their instructions
+
+pip, virtualenv and virtualenvwrapper:
+http://pypi.python.org/pypi/pip
+http://pypi.python.org/pypi/virtualenv
+http://www.doughellmann.com/projects/virtualenvwrapper/
+
+And install the required Python libraries to a virtualenv:
+mkvirtualenv making-maps-demo
+pip install -r requirements.txt
+
+...and fire up your tiles.
+
+./setup
+./style
+./render

@@ -188,7 +188,7 @@
    srs="+proj=longlat +ellps=GRS80 +no_defs">
     <StyleName>counties</StyleName>
     <Datasource>
-       <Parameter name="file">/Users/bboyer/src/census2010/census_demo/merged/merged.shp</Parameter>
+       <Parameter name="file">/Volumes/Home/bboyer/src/making-maps-demo/merged/merged.shp</Parameter>
        <Parameter name="type">shape</Parameter>
     </Datasource>
   </Layer>
@@ -218,7 +218,7 @@
    srs="+proj=longlat +ellps=GRS80 +no_defs">
     <StyleName>labels</StyleName>
     <Datasource>
-       <Parameter name="file">/Users/bboyer/src/census2010/census_demo/merged/merged.shp</Parameter>
+       <Parameter name="file">/Volumes/Home/bboyer/src/making-maps-demo/merged/merged.shp</Parameter>
        <Parameter name="type">shape</Parameter>
     </Datasource>
   </Layer>
