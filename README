@@ -1,6 +1,7 @@
-This code accompanies a five-part blog series on our recent explorations making choropleth maps using PostGIS, TileMill, Mapnik and Google Maps.
+This code accompanies a five-part blog series on our recent explorations making choropleth maps using PostGIS, TileMill, Mapnik and Google Maps. On completion of the tutorial you'll have made something like this:
+http://media.apps.chicagotribune.com/census-2010/census-demo/index.html
 
-To work through the demo go here:
+To work through the tutorial go here:
 http://blog.apps.chicagotribune.com/2011/03/07/making-maps-1/
 
 If you're impatient, install the requirements...
