@@ -1,0 +1,4 @@
+#! /bin/sh
+rm -rf census-demo/.tiles
+mkdir census-demo/.tiles
+python render_tiles.py tilemill/census_demo.xml census-demo/.tiles/ 42.57 -91.65 36.9 -87.23 7 10 2

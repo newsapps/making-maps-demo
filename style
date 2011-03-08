@@ -1,0 +1,3 @@
+#! /bin/sh
+cp /Applications/TileMill/files/project/census_demo/* tilemill
+/Applications/TileMill/bin/carto tilemill/census_demo.mml > tilemill/census_demo.xml

@@ -1,0 +1,4 @@
+
+				NOTE: For information on confidentiality protection, nonsampling error, and definitions, see http://www.census.gov/prod/cen2010/pl94-171.pdf
+Source: U.S. Census Bureau, 2010 Census.
+2010 Census Redistricting Data (Public Law 94-171) Summary File, Tables P1 and H1

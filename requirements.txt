@@ -1,0 +1,6 @@
+Fabric==0.9.3
+argparse==1.1
+paramiko==1.7.6
+pycrypto==2.3
+-e svn+https://s3tools.svn.sourceforge.net/svnroot/s3tools/s3cmd/tags/1.0.0@465#egg=s3cmd-1.0.0
+wsgiref==0.1.2

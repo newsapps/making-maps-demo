@@ -1,0 +1,28 @@
+#! /bin/sh
+#
+# create the database (first drop the old one, if it exists)
+#
+dropdb census_demo
+createdb census_demo -T template_postgis
+#
+# prepare the data, create the table and load it
+# ...using Joe Germuska's csvcut to trim the columns we don't need
+# ...using tail to yank off the ugly headers
+# ...using cut to trim the leading cruft off the id column
+#
+./csvcut -f 2,4,5 -o "," DEC_10_PL_GCTPL2.ST05/DEC_10_PL_GCTPL2.ST05.csv | tail +5 | cut -c 10-200 > population.csv
+psql -d census_demo -c "create table population (id char(5), county varchar(100), population integer);"
+psql -d census_demo -c "copy population from '${HOME}/src/Census-Map-Demo/population.csv' delimiters ',' CSV;"
+#
+# load the shapefile
+# ...using the same projection as google maps because that's eventually how we'll
+# ...present it, so any geometric calcs we may run in our merge sql are correct
+#
+ogr2ogr -f PostgreSQL PG:dbname=census_demo tl_2010_17_county10/tl_2010_17_county10.shp -t_srs EPSG:900913 -nlt multipolygon -nln tl_2010_17_county10
+#
+# stitch the two tables together and write to a new shapefile
+# ...calculating the pop per sq km cuz using the raw population is less good
+# ...going back to 4269 so that TileMill is happy
+#
+psql -d census_demo -f merge.sql
+ogr2ogr -f "ESRI Shapefile" merged PG:dbname=census_demo -sql "select * from merged" -nln merged -t_srs EPSG:4269 -overwrite
